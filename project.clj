@@ -21,7 +21,7 @@
                  [venantius/accountant "0.1.4"]
                  [hazard "0.2.0"]
                  [cljs-ajax "0.5.1"]
-                 [markdown-clj "0.9.80"]]
+                 [endophile "0.1.2"]]
 
   :plugins [[lein-environ "1.0.1"]
             [lein-asset-minifier "0.2.2"]]

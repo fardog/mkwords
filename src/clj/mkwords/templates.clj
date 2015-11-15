@@ -1,7 +1,8 @@
 (ns mkwords.templates
   (:require [hiccup.core :refer [html]]
             [hiccup.page :refer [include-js include-css]]
-            [markdown.core :refer [md-to-html-string]]
+            [endophile.core :refer [mp to-clj html-string]]
+            [endophile.hiccup :refer [to-hiccup]]
             [environ.core :refer [env]]))
 
 (defn- page-shell
@@ -59,11 +60,11 @@
 (defn create-markdown-page
   [title mkd-file]
   (let [mkd (slurp mkd-file)
-        mkd-string (md-to-html-string mkd :reference-links? true)]
+        mkd-parsed (mp mkd)]
     (fn [_]
       (page-shell
         [:div.container.condensed
          [:div.grid
           [:div.row
            [:div.span.twelve 
-            [:div.markdown mkd-string]]]]]))))
+            [:div.markdown (to-hiccup mkd-parsed)]]]]]))))

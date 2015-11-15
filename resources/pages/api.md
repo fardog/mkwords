@@ -19,7 +19,7 @@ Retrieves a set of wors; accepts the following GET parameters:
 
 #### Example
 
-`curl https://mkwords.fardog.io/api/v1/generate?numWords=5`
+`curl https://mkwords.fardog.io/api/v1/generate?num-words=5`
 
 Response:
 
