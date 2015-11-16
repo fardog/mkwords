@@ -1,4 +1,4 @@
-(defproject mkwords "0.1.0-SNAPSHOT"
+(defproject mkwords "0.1.0-pre.1"
   :description "Make a password, maybe securely?"
   :url "https://mkwords.fardog.io"
   :license {:name "Eclipse Public License"
