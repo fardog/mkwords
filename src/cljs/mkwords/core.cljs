@@ -16,9 +16,14 @@
 
 (defn- generate-words!
   [& args]
-  (swap! state assoc :candidate-count
-         (util/candidate-count (first args) (last args)))
-  (swap! state assoc :words (apply hazard/words args)))
+  (try
+    (let [words (apply hazard/words args)
+          candidates (util/candidate-count (first args) (last args))]
+      (swap! state assoc :candidate-count candidates)
+      (swap! state assoc :words words)
+      (swap! state assoc :error nil))
+    (catch js/Error e
+      (swap! state assoc :error e))))
 
 ;; -------------------------
 ;; Components
@@ -50,14 +55,17 @@
            [number-input :max-chars max-chars $limit-chars]]])])))
 
 (defn word-view []
-  (let [{:keys [num-words min-chars max-chars word-list candidate-count words]} @state
+  (let [{:keys [num-words min-chars max-chars
+                word-list candidate-count words error]} @state
         show-options (r/atom false)]
     [:div {:class "container"}
      [:div {:class "grid"}
       [:div {:class "banner row"}
        [:div {:class "span twelve"}
-        [:h4 (string/join " " words)
-         [:small (str "generated from " candidate-count " candidate words")]]
+        (if (not (nil? error))
+          [:h4 (str error)]
+          [:h4 (string/join " " words)
+           [:small (str "generated from " candidate-count " candidate words")]])
         [:div
          [:button {:class "button primary small"
                    :on-click #(generate-words! word-list num-words
