@@ -1,7 +1,7 @@
 # API
 
-A password generation API is available; the current version consists of a single
-endpoint, which can be requested to generate word lists:
+A word list API is available; the current version consists of a single endpoint,
+which can be requested to generate word lists:
 
 ## Endpoints (v1)
 

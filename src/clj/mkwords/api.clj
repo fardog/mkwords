@@ -32,7 +32,8 @@
          :status 200})
       (catch Exception e
         {:body {:ok false
-                :error (.getMessage e)}}))))
+                :error (.getMessage e)}
+         :status 400}))))
 
 (def generate
   (-> do-generate

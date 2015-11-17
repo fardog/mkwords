@@ -46,17 +46,6 @@
         mount-target]]]]
     true))
 
-(defn api-page
-  [_]
-  (page-shell
-    [:div.container.condensed
-     [:div.grid
-      [:div.row
-       [:div.span.twelve
-        [:h4 "API"]
-        [:p "mkwords contains an API for generating passwords.
-            The API will be documented on this page."]]]]]))
-
 (defn create-markdown-page
   [title mkd-file]
   (let [mkd (slurp mkd-file)

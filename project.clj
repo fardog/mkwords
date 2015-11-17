@@ -1,5 +1,5 @@
 (defproject mkwords "0.1.0-pre.1"
-  :description "Make a password, maybe securely?"
+  :description "Get lists of random English words, many as you'd like."
   :url "https://mkwords.fardog.io"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
