@@ -1,4 +1,4 @@
-(defproject mkwords "0.1.0-pre.3"
+(defproject mkwords "0.1.0-pre.4"
   :description "Get lists of random English words, many as you'd like."
   :url "https://mkwords.fardog.io"
   :license {:name "Eclipse Public License"
