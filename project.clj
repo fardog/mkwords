@@ -19,7 +19,7 @@
                  [org.clojure/clojurescript "1.7.145" :scope "provided"]
                  [secretary "1.2.3"]
                  [venantius/accountant "0.1.4"]
-                 [hazard "0.2.0"]
+                 [hazard "0.3.0"]
                  [cljs-ajax "0.5.1"]
                  [endophile "0.1.2"]]
 

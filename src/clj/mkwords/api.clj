@@ -6,7 +6,6 @@
             [ring.middleware.params :as ring-params]
             [ring.middleware.json :as ring-json]
             [hazard.core :as hazard]
-            [mkwords.util :as util]
             [mkwords.constants :refer [$defaults]]))
 
 (def word-list 
@@ -28,7 +27,7 @@
       (let [words (hazard/words word-list num-words opts)]
         {:body {:ok true
                 :result words
-                :candidate-count (util/candidate-count word-list opts)}
+                :candidate-count (:candidate-count (meta words))}
          :status 200})
       (catch Exception e
         {:body {:ok false

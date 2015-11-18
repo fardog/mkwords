@@ -7,7 +7,6 @@
             [hazard.core :as hazard]
             [ajax.core :as ajax]
             [accountant.core :as accountant]
-            [mkwords.util :as util]
             [mkwords.constants :refer [$strings $limits $defaults
                                       $limit-chars $limit-words
                                       $default-chars]]))
@@ -17,9 +16,8 @@
 (defn- generate-words!
   [& args]
   (try
-    (let [words (apply hazard/words args)
-          candidates (util/candidate-count (first args) (last args))]
-      (swap! state assoc :candidate-count candidates)
+    (let [words (apply hazard/words args)]
+      (swap! state assoc :candidate-count (:candidate-count (meta words)))
       (swap! state assoc :words words)
       (swap! state assoc :error nil))
     (catch js/Error e
