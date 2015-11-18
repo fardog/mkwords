@@ -26,7 +26,13 @@ Response:
 ```json
 {
   "ok": true,
-  "response": ["pictured", "menace", "amino", "canister", "twangs"],
+  "response": [
+    "pictured",
+    "menace",
+    "amino",
+    "canister",
+    "twangs"
+  ],
   "candidate-count": 70806
 }
 ```
