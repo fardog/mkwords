@@ -1,0 +1,28 @@
+{
+  "name": "mkwords",
+  "version": "0.1.0",
+  "description": "Get lists of random English words, many as you'd like. _mkwords_ is a small web application for generating word lists in your browser, and its web server also stands up a single API endpoint that you can request words from.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run compile-sass",
+    "compile-sass": "node-sass --include-path ./resources/vendor/bijou/scss ./resources/scss --output ./resources/public/css --output-style compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fardog/mkwords.git"
+  },
+  "author": "Nathan Wittstock <nate@fardog.io>",
+  "license": "EPL-1.0",
+  "bugs": {
+    "url": "https://github.com/fardog/mkwords/issues"
+  },
+  "homepage": "https://github.com/fardog/mkwords#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "node-sass": "^3.4.2"
+  }
+}

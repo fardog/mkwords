@@ -16,8 +16,7 @@
      [:meta {:name "viewport"
              :content "width=device-width, initial-scale=1"}]
      [:title "mkwords"]
-     (include-css "vendor/bijou/css/bijou.min.css"
-                  (if (env :dev) "css/site.css" "css/site.min.css"))]
+     (include-css "css/site.css")]
     [:body
      [:div.navbar
       [:div.container

@@ -1,3 +1,3 @@
-[submodule "resources/public/vendor/bijou"]
-	path = resources/public/vendor/bijou
+[submodule "resources/vendor/bijou"]
+	path = resources/vendor/bijou
 	url = git@github.com:andhart/bijou.git

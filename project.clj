@@ -24,7 +24,7 @@
                  [endophile "0.1.2"]]
 
   :plugins [[lein-environ "1.0.1"]
-            [lein-asset-minifier "0.2.2"]]
+            [lein-shell "0.4.1"]]
 
   :ring {:handler mkwords.handler/app
          :uberwar-name "mkwords.war"}
@@ -35,15 +35,14 @@
 
   :main mkwords.server
 
+  :prep-tasks [["shell" "npm" "run" "build"]
+               "javac" "compile"]
+
   :clean-targets ^{:protect false} [:target-path
                                     [:cljsbuild :builds :app :compiler :output-dir]
                                     [:cljsbuild :builds :app :compiler :output-to]]
 
   :source-paths ["src/clj" "src/cljc"]
-
-  :minify-assets
-  {:assets
-    {"resources/public/css/site.min.css" "resources/public/css/site.css"}}
 
   :cljsbuild {:builds {:app {:source-paths ["src/cljs" "src/cljc"]
                              :compiler {:output-to     "resources/public/js/app.js"
@@ -82,7 +81,7 @@
                                               :compiler {:main "mkwords.dev"
                                                          :source-map true}}}}}
 
-             :uberjar {:hooks [leiningen.cljsbuild minify-assets.plugin/hooks]
+             :uberjar {:hooks [leiningen.cljsbuild]
                        :env {:production true}
                        :aot :all
                        :omit-source true

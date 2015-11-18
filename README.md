@@ -33,9 +33,22 @@ application, look no further than:
 
 ## Running
 
+Running this project assumes you have a working Clojure and Leiningen, and also
+[Node.js][node], preferably v4.2.x. Node is used to build the SCSS, as I haven't
+found a good library for Clojure that doesn't require some form of Ruby.
+
 _mkwords_ is a Clojure/ClojureScript project built using the [Reagent][]
 library. It was generated with a `lein new reagent mkpass` and not modified
 much, so most of its docs apply here.
+
+First, clone the repo recursively (there is a submodule for the styles):
+
+```
+git clone git@github.com:fardog/mkwords.git --recursive
+```
+
+Before getting started, install the node dependencies with an `npm install` from
+the root of the project.
 
 To get things running in a dev environment, open two terminals and run one
 command in each:
@@ -45,7 +58,9 @@ lein run
 lein figwheel
 ```
 
-That'll get you a livereloaded server at http://localhost:3000
+That'll get you a livereloaded server at http://localhost:3000. **Note:** CSS
+will be built from the source SASS when `lein run` is done, but subsequent
+changes must be done manually; the easiest way is with a `npm run compile`.
 
 ## Building
 
@@ -64,7 +79,8 @@ Copyright © 2015 Nathan Wittstock
 Distributed under the Eclipse Public License either version 1.0 or (at
 your option) any later version.
 
-[Reagent][]: https://github.com/reagent-project/reagent
-[hazard][]: https://clojars.org/hazard/
-[xkcd-password][]: https://npm.im/xkcd-password/
+[node]: http://nodejs.org
+[Reagent]: https://github.com/reagent-project/reagent
+[hazard]: https://clojars.org/hazard/
+[xkcd-password]: https://npm.im/xkcd-password/
 [website]: https://mkwords.fardog.io/
