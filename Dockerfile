@@ -1,4 +1,4 @@
-FROM clojure
+FROM java:8
 EXPOSE 3000
 RUN mkdir -p /usr/jar/app
 WORKDIR /usr/jar/app
