@@ -34,6 +34,8 @@ library you can include it in your Node applications.
 library, and is what powers this site. You can use the [hazard][hazard] library
 in your own applications.
 
+[**flippant**][flippant] is a [Go][golang] version of hazard.
+
 [words]: https://raw.githubusercontent.com/fardog/hazard/master/resources/mwords/113809of.fic
 [https]: https://en.wikipedia.org/wiki/HTTPS
 [code]: https://github.com/fardog/mkwords
@@ -41,3 +43,5 @@ in your own applications.
 [node]: https://nodejs.org
 [hazard]: https://clojars.org/hazard
 [clojure]: https://clojure.org
+[flippant]: https://github.com/fardog/flippant
+[golang]: https://golang.org/
